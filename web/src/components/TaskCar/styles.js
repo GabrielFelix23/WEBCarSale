@@ -20,6 +20,21 @@ export const Box = styled.div`
     img{
         width: 40px
     }
+
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none;
+        background: #F53131;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 5px;
+        width: 90px;
+        height: 30px;
+        margin-top: 10px
+    }
 `
 
 export const Value = styled.div`
