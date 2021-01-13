@@ -27,7 +27,7 @@ function Home() {
         <S.ContainerTaskCar>
           {
             list.map((l) => (
-              <TaskCar name={l.model} price={l.price} km={l.km}/>
+              <TaskCar id={l._id} name={l.model} price={l.price} km={l.km}/>
             ))
           }
         </S.ContainerTaskCar>
