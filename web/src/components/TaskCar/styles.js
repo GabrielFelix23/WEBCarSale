@@ -35,6 +35,9 @@ export const Box = styled.div`
         height: 30px;
         margin-top: 10px
     }
+    a:hover{
+        opacity: 0.7
+    }
 `
 
 export const Value = styled.div`

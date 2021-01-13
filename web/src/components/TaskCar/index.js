@@ -4,7 +4,7 @@ import * as S from './styles'
 
 import car from '../../used/car.png'
 
-function TaskCar({name, price}) {
+function TaskCar({name, price, km}) {
   return (
     <S.Container>
         <S.Box>
@@ -12,6 +12,7 @@ function TaskCar({name, price}) {
             <S.Value>
                 <small>Carro: {name}</small>
                 <small>R$: {price}</small>
+                <small>KM/H: {km}</small>
             </S.Value>
             <a href="/">Ver +</a>
         </S.Box>
