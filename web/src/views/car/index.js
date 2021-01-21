@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import * as S from './styles'
 
 import api from '../../api/'
 
 function Car({match}) {
-  const[list, setList] = useState([])
+  const [list, setList] = useState([])
+  const [redirect, setRedirect] = useState(false)
 
   async function CarList(){ 
     await api.get(`/filter/${match.params.id}`)
@@ -14,12 +15,21 @@ function Car({match}) {
       })
   }
 
+  async function clear(){
+    await api.delete(`/delete/${match.params.id}`)
+    .then(() => {
+      setRedirect(true)
+    })
+  }
+
   useEffect(() => {
     CarList()
   }, [list])
 
   return (
-    <S.Container>      
+    <S.Container>  
+        {redirect && <Redirect to="/"/>}
+
         <S.ContainerTaskCar>  
           <S.TaskCar>
             <h3>Marca: {list.brand}</h3>
@@ -39,6 +49,8 @@ function Car({match}) {
         
         <S.ContainerButtons>
           <Link to='/'>Voltar</Link>
+          <Link to={`/sell/${list._id}`}>Editar</Link>
+          <button type="button" onClick={clear}>Deletar</button>
         </S.ContainerButtons>
     </S.Container>
   )

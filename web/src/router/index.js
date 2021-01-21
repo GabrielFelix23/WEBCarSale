@@ -15,6 +15,7 @@ export default function Router(){
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/filter/:id" component={Car}/>
                 <Route exact path="/sell" component={Sell}/>
+                <Route exact path="/sell/:id" component={Sell}/>
             </Switch>
             <Footer/>
         </BrowserRouter>

@@ -1,11 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import * as S from './styles'
 
 import api from '../../api'
 import { Redirect } from 'react-router-dom'
 
-function Sell(){
-    const [redirect, setRedrect] = useState(false)
+function Sell({match}){
+    const [redirect, setRedirect] = useState(false)
+    const [redirectHome, setRedirectHome] = useState(false)
     const [brand, setBrand] = useState()
     const [price, setPrice] = useState()
     const [model, setModel] = useState()
@@ -21,29 +22,74 @@ function Sell(){
     const [macaddress, setMacaddress] = useState('11:11:11:11:11:11')
 
     async function saveSell(){
-        await api.post('/', {
-            macaddress,
-            brand,
-            price,
-            model,
-            chassis,
-            year,
-            km,
-            exchange,
-            doors,
-            color,
-            shield,
-            state,
-            city
-        })
-        .then(() => {
-            setRedrect(true)
+        if(match.params.id){
+            await api.put(`/update/${match.params.id}`, {
+                macaddress,
+                brand,
+                price,
+                model,
+                chassis,
+                year,
+                km,
+                exchange,
+                doors,
+                color,
+                shield,
+                state,
+                city
+            })
+            .then(() => {
+                setRedirect(true)
+            })
+        }
+        else{
+            await api.post('/', {
+                macaddress,
+                brand,
+                price,
+                model,
+                chassis,
+                year,
+                km,
+                exchange,
+                doors,
+                color,
+                shield,
+                state,
+                city
+            })
+            .then(() => {
+                setRedirectHome(true)
+            })
+        }
+    }
+
+    async function updating(){
+        await api.get(`/filter/${match.params.id}`)
+        .then((response) => {
+            setBrand(response.data.brand)
+            setModel(response.data.model)
+            setPrice(response.data.price)
+            setChassis(response.data.chassis)
+            setYear(response.data.year)
+            setKm(response.data.km)
+            setExchange(response.data.exchange)
+            setDoors(response.data.doors)
+            setColor(response.data.color)
+            setShield(response.data.shield)
+            setState(response.data.state)
+            setCity(response.data.city)            
         })
     }
 
+    useEffect(() => {
+        updating()
+    }, [])
+
     return(
         <S.Container>
-                {redirect  && <Redirect to='/'/>}
+                {redirect  && <Redirect to={`/filter/${match.params.id}`}/>}
+                {redirectHome && <Redirect to={'/'}/>}
                 <label>Marca</label>
                 <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)}/>
 
