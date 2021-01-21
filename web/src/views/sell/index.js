@@ -2,8 +2,10 @@ import React, {useState} from 'react'
 import * as S from './styles'
 
 import api from '../../api'
+import { Redirect } from 'react-router-dom'
 
 function Sell(){
+    const [redirect, setRedrect] = useState(false)
     const [brand, setBrand] = useState()
     const [price, setPrice] = useState()
     const [model, setModel] = useState()
@@ -35,16 +37,13 @@ function Sell(){
             city
         })
         .then(() => {
-            alert("Salvo")
-        })
-        .catch((error) => {
-            alert("não salvo")
-            console.log(error)
+            setRedrect(true)
         })
     }
 
     return(
         <S.Container>
+                {redirect  && <Redirect to='/'/>}
                 <label>Marca</label>
                 <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)}/>
 
