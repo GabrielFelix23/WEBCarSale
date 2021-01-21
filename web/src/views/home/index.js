@@ -6,9 +6,10 @@ import api from '../../api'
 
 function Home() {
   const[list, setList] = useState([])
+  const[macaddress, setMacaddress] = useState("11:11:11:11:11:11")
 
   async function connectApI(){
-    await api.get('/filter/all/11:11:11:11:11')
+    await api.get(`/filter/all/${macaddress}`)
     .then((response) => {
       setList(response.data)
     })

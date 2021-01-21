@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import * as S from './styles'
 
 import api from '../../api'
@@ -45,40 +45,40 @@ function Sell(){
 
     return(
         <S.Container>
-                <label>Brand</label>
+                <label>Marca</label>
                 <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)}/>
 
-                <label>model</label>
+                <label>modelo</label>
                 <input type="text" value={model} onChange={(e) => setModel(e.target.value)}/>
 
-                <label>price</label>
+                <label>Preço</label>
                 <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}/>
 
-                <label>chassis</label>
+                <label>Chassi</label>
                 <input type="number" value={chassis} onChange={(e) => setChassis(e.target.value)}/>
 
-                <label>year</label>
+                <label>Ano</label>
                 <input type="text" value={year} onChange={(e) => setYear(e.target.value)}/>
 
-                <label>km</label>
-                <input type="text" value={km} onChange={(e) => setKm(e.target.value)}/>
+                <label>Km/H</label>
+                <input type="number" value={km} onChange={(e) => setKm(e.target.value)}/>
 
-                <label>exchange</label>
+                <label>Câmbio</label>
                 <input type="text" value={exchange} onChange={(e) => setExchange(e.target.value)}/>
 
-                <label>doors</label>
+                <label>Portas</label>
                 <input type="number" value={doors} onChange={(e) => setDoors(e.target.value)}/>
 
-                <label>color</label>
+                <label>Cor</label>
                 <input type="text" value={color} onChange={(e) => setColor(e.target.value)}/>
                 
-                <label>shield</label>
+                <label>Blindado</label>
                 <input type="text" value={shield} onChange={(e) => setShield(e.target.value)}/>
 
-                <label>state</label>
+                <label>Estado</label>
                 <input type="text" value={state} onChange={(e) => setState(e.target.value)}/>
 
-                <label>city</label>
+                <label>Cidade</label>
                 <input type="text" value={city} onChange={(e) => setCity(e.target.value)}/>
 
                 <button type="button" onClick={saveSell}>Pronto</button>

@@ -22,17 +22,18 @@ function Car({match}) {
     <S.Container>      
         <S.ContainerTaskCar>  
           <S.TaskCar>
-            <h3>Brand: {list.brand}</h3>
-            <h3>Model: {list.model}</h3>
-            <h3>Chassis: {list.chassis}</h3>
-            <h3>Year: {list.year}</h3>
+            <h3>Marca: {list.brand}</h3>
+            <h3>Modelo: {list.model}</h3>
+            <h3>Preço: {list.price}</h3>
+            <h3>Chassi: {list.chassis}</h3>
+            <h3>Ano: {list.year}</h3>
             <h3>KM/H: {list.km}</h3>
-            <h3>Exchange: {list.exchange}</h3>
-            <h3>Doors: {list.doors}</h3>
-            <h3>Color: {list.color}</h3>
-            <h3>Shield: {list.shield}</h3>
-            <h3>State: {list.state}</h3>
-            <h3>City: {list.city}</h3>
+            <h3>Câmbio: {list.exchange}</h3>
+            <h3>Portas: {list.doors}</h3>
+            <h3>Cor: {list.color}</h3>
+            <h3>Blingado: {list.shield}</h3>
+            <h3>Estado: {list.state}</h3>
+            <h3>Cidade: {list.city}</h3>
           </S.TaskCar>  
         </S.ContainerTaskCar>
         
