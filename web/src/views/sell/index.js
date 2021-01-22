@@ -5,6 +5,7 @@ import api from '../../api'
 import { Redirect } from 'react-router-dom'
 
 function Sell({match}){
+    const [error, setError] = useState()
     const [redirect, setRedirect] = useState(false)
     const [redirectHome, setRedirectHome] = useState(false)
     const [brand, setBrand] = useState()
@@ -23,55 +24,55 @@ function Sell({match}){
 
     async function saveSell(){
         if(!brand){
-            alert("Marca é obrigatória!")
+            setError("Marca é um campo obrigatório!")
         }
 
         else if(!model){
-            alert("Modelo é obrigatório!")
+            setError("Modelo é um campo obrigatório!")
         }
 
         else if(!price){
-            alert("Preço é obrigatório!")
+            setError("Preço é um campo obrigatório!")
         }
 
         else if(!chassis){
-            alert("Chassi é obrigatório!")
+            setError("Chassi é um campo obrigatório!")
         }
 
         else if(chassis.length < 7){
-            alert("Chassi é obrigatório ter 7 número!")
+            setError("Chassi é obrigatório ter 7 número!")
         }
 
         else if(!year){
-            alert("Ano é obrigatório!")
+            setError("Ano é um campo obrigatório!")
         }
 
         else if(!km){
-            alert("KM/H é obrigatório!")
+            setError("KM/H é um campo obrigatório!")
         }
 
         else if(!exchange){
-            alert("Câmbio é obrigatório!")
+            setError("Câmbio é um campo obrigatório!")
         }
 
         else if(!doors){
-            alert("Quantidade de postas são obrigatórias!")
+            setError("Quantidade de postas são obrigatórias!")
         }
 
         else if(!color){
-            alert("Cor é obrigatório!")
+            setError("Cor é um campo obrigatório!")
         }
 
         else if(!shield){
-            alert("Blindagem é obrigatório!")
+            setError("Blindagem é um campo obrigatório!")
         }
 
         else if(!state){
-            alert("Estado é obrigatório!")
+            setError("Estado é um campo obrigatório!")
         }
 
         else if(!city){
-            alert("Cidade é obrigatório!")
+            setError("Cidade é um campo obrigatório!")
         }
 
         if(match.params.id){
@@ -91,8 +92,13 @@ function Sell({match}){
                 city
             })
             .then(() => {
-                setRedirect(true)
+                if(brand != '' && price != '' && model != '' && chassis != '' && year != '' &&
+                km != '' && exchange != '' && doors != '' && color != '' && shield != '' &&
+                state != '' && city != ''){
+                    setRedirect(true)
+                }
             })
+           
         }
         else{
             await api.post('/', {
@@ -140,8 +146,11 @@ function Sell({match}){
 
     return(
         <S.Container>
+                <h2>{error}</h2>
+
                 {redirect  && <Redirect to={`/filter/${match.params.id}`}/>}
                 {redirectHome && <Redirect to={'/'}/>}
+
                 <label>Marca</label>
                 <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)}/>
 
