@@ -37,9 +37,20 @@ export const ContainerButtons = styled.div`
 
         width: 100px;
         height: 50px;
-        background: #FF0000;
         color: #fff;
         text-decoration: none;
         border-radius: 10px;
+        margin: 0 10px;
+    }
+    .backButton{
+        background: #FF0000;
+        
+    }
+    .editButton{
+        background: #FE9A2E
+    }
+
+    .deleteButton{
+        background: #848484;
     }
 ` 

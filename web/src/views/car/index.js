@@ -48,9 +48,9 @@ function Car({match}) {
         </S.ContainerTaskCar>
         
         <S.ContainerButtons>
-          <Link to='/'>Voltar</Link>
-          <Link to={`/sell/${list._id}`}>Editar</Link>
-          <button type="button" onClick={clear}>Deletar</button>
+          <Link className="backButton" to='/'>Voltar</Link>
+          <Link className="editButton" to={`/sell/${list._id}`}>Editar</Link>
+          <Link className="deleteButton" onClick={clear}>Deletar</Link>
         </S.ContainerButtons>
     </S.Container>
   )
