@@ -22,6 +22,58 @@ function Sell({match}){
     const [macaddress, setMacaddress] = useState('11:11:11:11:11:11')
 
     async function saveSell(){
+        if(!brand){
+            alert("Marca é obrigatória!")
+        }
+
+        else if(!model){
+            alert("Modelo é obrigatório!")
+        }
+
+        else if(!price){
+            alert("Preço é obrigatório!")
+        }
+
+        else if(!chassis){
+            alert("Chassi é obrigatório!")
+        }
+
+        else if(chassis.length < 7){
+            alert("Chassi é obrigatório ter 7 número!")
+        }
+
+        else if(!year){
+            alert("Ano é obrigatório!")
+        }
+
+        else if(!km){
+            alert("KM/H é obrigatório!")
+        }
+
+        else if(!exchange){
+            alert("Câmbio é obrigatório!")
+        }
+
+        else if(!doors){
+            alert("Quantidade de postas são obrigatórias!")
+        }
+
+        else if(!color){
+            alert("Cor é obrigatório!")
+        }
+
+        else if(!shield){
+            alert("Blindagem é obrigatório!")
+        }
+
+        else if(!state){
+            alert("Estado é obrigatório!")
+        }
+
+        else if(!city){
+            alert("Cidade é obrigatório!")
+        }
+
         if(match.params.id){
             await api.put(`/update/${match.params.id}`, {
                 macaddress,
