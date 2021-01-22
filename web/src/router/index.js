@@ -2,7 +2,6 @@ import React from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 import Header from '../components/header'
-import Footer from '../components/footer'
 import Home from '../views/home'
 import Car from '../views/car'
 import Sell from '../views/sell'
@@ -17,7 +16,6 @@ export default function Router(){
                 <Route exact path="/sell" component={Sell}/>
                 <Route exact path="/sell/:id" component={Sell}/>
             </Switch>
-            <Footer/>
         </BrowserRouter>
     )
 }
