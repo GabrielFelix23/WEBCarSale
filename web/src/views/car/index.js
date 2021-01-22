@@ -16,10 +16,13 @@ function Car({match}) {
   }
 
   async function clear(){
-    await api.delete(`/delete/${match.params.id}`)
-    .then(() => {
-      setRedirect(true)
-    })
+    const res = window.confirm("Deseja realmente deletar a postagem?")
+    if(res == true){
+      await api.delete(`/delete/${match.params.id}`)
+      .then(() => {
+        setRedirect(true)
+      })
+    }
   }
 
   useEffect(() => {

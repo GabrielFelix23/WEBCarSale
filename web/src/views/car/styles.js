@@ -42,15 +42,26 @@ export const ContainerButtons = styled.div`
         border-radius: 10px;
         margin: 0 10px;
     }
+
     .backButton{
         background: #FF0000;
         
     }
+    .backButton:hover{
+        opacity: 0.7
+    }
+
     .editButton{
         background: #FE9A2E
     }
-
+    .editButton:hover{
+        opacity: 0.7
+    }
+    
     .deleteButton{
         background: #848484;
+    }
+    .deleteButton:hover{
+        opacity: 0.7
     }
 ` 

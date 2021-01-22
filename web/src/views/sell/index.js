@@ -152,40 +152,40 @@ function Sell({match}){
                 {redirectHome && <Redirect to={'/'}/>}
 
                 <label>Marca</label>
-                <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)}/>
+                <input type="text" required value={brand} onChange={(e) => setBrand(e.target.value)}/>
 
                 <label>modelo</label>
-                <input type="text" value={model} onChange={(e) => setModel(e.target.value)}/>
+                <input type="text" required value={model} onChange={(e) => setModel(e.target.value)}/>
 
                 <label>Preço</label>
-                <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}/>
+                <input type="text" required value={price} onChange={(e) => setPrice(e.target.value)}/>
 
                 <label>Chassi</label>
-                <input type="number" value={chassis} onChange={(e) => setChassis(e.target.value)}/>
+                <input type="number" required value={chassis} onChange={(e) => setChassis(e.target.value)}/>
 
                 <label>Ano</label>
-                <input type="text" value={year} onChange={(e) => setYear(e.target.value)}/>
+                <input type="text" required value={year} onChange={(e) => setYear(e.target.value)}/>
 
                 <label>Km/H</label>
-                <input type="number" value={km} onChange={(e) => setKm(e.target.value)}/>
+                <input type="number" required value={km} onChange={(e) => setKm(e.target.value)}/>
 
                 <label>Câmbio</label>
-                <input type="text" value={exchange} onChange={(e) => setExchange(e.target.value)}/>
+                <input type="text" required value={exchange} onChange={(e) => setExchange(e.target.value)}/>
 
                 <label>Portas</label>
-                <input type="number" value={doors} onChange={(e) => setDoors(e.target.value)}/>
+                <input type="number" required value={doors} onChange={(e) => setDoors(e.target.value)}/>
 
                 <label>Cor</label>
-                <input type="text" value={color} onChange={(e) => setColor(e.target.value)}/>
+                <input type="text" required value={color} onChange={(e) => setColor(e.target.value)}/>
                 
                 <label>Blindado</label>
-                <input type="text" value={shield} onChange={(e) => setShield(e.target.value)}/>
+                <input type="text" required value={shield} onChange={(e) => setShield(e.target.value)}/>
 
                 <label>Estado</label>
-                <input type="text" value={state} onChange={(e) => setState(e.target.value)}/>
+                <input type="text" required value={state} onChange={(e) => setState(e.target.value)}/>
 
                 <label>Cidade</label>
-                <input type="text" value={city} onChange={(e) => setCity(e.target.value)}/>
+                <input type="text" required value={city} onChange={(e) => setCity(e.target.value)}/>
 
                 <button type="button" onClick={saveSell}>Pronto</button>
         </S.Container>
