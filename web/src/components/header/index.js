@@ -11,9 +11,9 @@ function Header(){
             <S.Nav>
                 <Link to="/">Home</Link>
                 <small className="divider"/>
-                <a href="#">Carros</a>
+                <a href="/sell">Vender veículos</a>
                 <small className="divider"/>
-                <Link to="/sell">Vender veículos</Link>
+                <a href="#">QRCode</a>
             </S.Nav>
         </S.Container>
     )
