@@ -14,7 +14,6 @@ export const Container = styled.div`
         width: 90px;
         margin: 0 10px;
     }
-    
 `
 
 export const Nav = styled.div`
@@ -35,5 +34,16 @@ export const Nav = styled.div`
         content: "|";
         color: #fff;
         padding: 0 20px;
+    }
+    button{
+        border: none;
+        background: none;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover{
+            color: #000
+        }
     }
 `

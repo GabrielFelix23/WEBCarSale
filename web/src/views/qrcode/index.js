@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import * as S from './styles'
 import Qr from 'qrcode.react'
 import { Redirect } from 'react-router-dom'
@@ -17,7 +17,7 @@ function QRCode(){
         <S.Container>
             {redirect && <Redirect to="/"/>}
             
-            <h1>Aproxime a câmera do seu celular.</h1>
+            <h1>Aproxime a câmera do seu celular:</h1>
             <Qr value="getMacaddress" size={250}/>
             <S.ContainerInput>
                 <h2>Entre com o número que apareceu no seu celular!</h2>
