@@ -43,7 +43,9 @@ export const Nav = styled.div`
         cursor: pointer;
 
         &:hover{
-            color: #000
+            color: #000;
+            border: none;
+            background: none;
         }
     }
 `

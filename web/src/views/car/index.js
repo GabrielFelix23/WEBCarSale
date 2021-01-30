@@ -31,8 +31,8 @@ function Car({match}) {
 
   return (
     <S.Container>  
+      
         {redirect && <Redirect to="/"/>}
-
         <S.ContainerTaskCar>  
           <S.TaskCar>
             <h3>Marca: {list.brand}</h3>
