@@ -3,6 +3,7 @@ import * as S from './styles'
 
 import api from '../../api'
 import { Redirect } from 'react-router-dom'
+import isConnected from '../../util/get_macaddress'
 
 function Sell({match}){
     const [error, setError] = useState()
@@ -20,7 +21,6 @@ function Sell({match}){
     const [shield, setShield] = useState()
     const [state, setState] = useState()
     const [city, setCity] = useState()
-    const [macaddress, setMacaddress] = useState('11:11:11:11:11:11')
 
     async function saveSell(){
         if(!brand){
@@ -77,7 +77,7 @@ function Sell({match}){
 
         if(match.params.id){
             await api.put(`/update/${match.params.id}`, {
-                macaddress,
+                macaddress: isConnected,
                 brand,
                 price,
                 model,
@@ -102,7 +102,7 @@ function Sell({match}){
         }
         else{
             await api.post('/', {
-                macaddress,
+                macaddress: isConnected,
                 brand,
                 price,
                 model,
@@ -141,6 +141,10 @@ function Sell({match}){
     }
 
     useEffect(() => {
+        if(!isConnected){
+            setRedirectHome(true)
+        }
+
         updating()
     }, [])
 

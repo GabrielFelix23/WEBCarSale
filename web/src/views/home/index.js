@@ -1,26 +1,34 @@
 import React, {useState, useEffect} from 'react'
+import { Redirect } from 'react-router-dom'
 import * as S from './styles'
 
 import TaskCar from '../../components/TaskCar';
 import api from '../../api'
 
+import isConnected from '../../util/get_macaddress'
+
 function Home() {
   const[list, setList] = useState([])
-  const[macaddress, setMacaddress] = useState("11:11:11:11:11:11")
+  const[redirect, setRedirect] = useState(false)
 
   async function connectApI(){
-    await api.get(`/filter/all/${macaddress}`)
+    await api.get(`/filter/all/${isConnected}`)
     .then((response) => {
       setList(response.data)
     })
   }
 
   useEffect(() => {
+    if(!isConnected){
+      setRedirect(true)
+    }
+
     connectApI()
   }, [])
 
   return (
-    <S.Container>      
+    <S.Container>   
+        {redirect && <Redirect to="/qrcode"/>}   
         <S.ContainerTaskCar>
           {
             list.map((l) => (
