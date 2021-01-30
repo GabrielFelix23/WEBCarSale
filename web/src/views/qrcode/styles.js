@@ -26,7 +26,7 @@ export const ContainerInput = styled.div`
     button{
         margin: 10px 0;
         width: 70%;
-        height: 30px;
+        height: 40px;
         border: none;
         background: #F53131;
         border-radius: 5px;

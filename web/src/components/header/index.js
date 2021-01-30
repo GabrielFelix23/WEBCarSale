@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import {IoMdExit} from 'react-icons/io'
+
 import * as S from './styles'
 
 import logo from '../../used/logo.png'
 import isConnected from '../../util/get_macaddress'
 
-function Header(){
+function Header({actived}){
     const [redirect, setRedirect] = useState(false)
 
     async function Exit() {
@@ -19,15 +21,17 @@ function Header(){
             {redirect && <Redirect to="/qrcode"/>}
 
             <img src={logo} alt="Logo"/>
-            <S.Nav>
+            <S.Nav actived={actived}>
                 <Link to="/">Home</Link>
                 <small className="divider"/>
                 <a href="/sell">Vender veículos</a>
                 <small className="divider"/>
                 {isConnected ? 
-                    <button type="button" onClick={Exit}>SAIR</button>
+                    <button type="button" onClick={Exit}>
+                        <IoMdExit/>
+                    </button>
                     :
-                    <Link to="/qrcode">QRCode</Link>
+                    <Link to="/qrcode">Vincular com Celular</Link>
                 }
             </S.Nav>
         </S.Container>

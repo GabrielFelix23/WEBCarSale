@@ -4,6 +4,7 @@ import * as S from './styles'
 
 import TaskCar from '../../components/TaskCar';
 import api from '../../api'
+import logo from '../../used/car.png'
 
 import isConnected from '../../util/get_macaddress'
 
@@ -30,7 +31,12 @@ function Home() {
     <S.Container>   
         {redirect && <Redirect to="/qrcode"/>}   
         <S.ContainerTaskCar>
-          {
+          {list == '' ? 
+            <div className="ContainerInfo">
+              <img src={logo} alt="Logo"/>
+              <h1>Nenhum carro cadastrado!</h1>
+            </div>
+            :
             list.map((l) => (
               <TaskCar id={l._id} name={l.model} price={l.price} km={l.km}/>
             ))

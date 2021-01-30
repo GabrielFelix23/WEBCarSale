@@ -39,8 +39,12 @@ function Sell({match}){
             setError("Chassi é um campo obrigatório!")
         }
 
-        else if(chassis.length < 7 || chassis.length > 7){
-            setError("Chassi é obrigatório ter 7 número!")
+        else if(chassis.length < 7){
+            setError("Chassi não pode ser menor que 7 números!")
+        }
+
+        else if(chassis.length > 7){
+            setError("Chassi não pode ser maior que 7 números!")
         }
 
         else if(!year){

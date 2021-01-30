@@ -10,4 +10,19 @@ export const ContainerTaskCar = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .ContainerInfo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        position: absolute;
+        top: 30%;
+
+        h1{
+            font-style: italic;
+            opacity: 0.8
+        }
+    }
 `

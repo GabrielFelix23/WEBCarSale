@@ -11,8 +11,8 @@ function TaskCar({id, name, price, km}) {
             <img src={car} alt="Car"/>
             <S.Value>
                 <small>Carro: {name}</small>
-                <small>R$ {price.toFixed(3)}</small>
-                <small>KM/H {km.toFixed(3)}</small>
+                <small>R$ {price}</small>
+                <small>KM/H {km}</small>
             </S.Value>
             <Link to={`/filter/${id}`}>Ver +</Link>
         </S.Box>

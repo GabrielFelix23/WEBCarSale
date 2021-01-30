@@ -47,5 +47,11 @@ export const Nav = styled.div`
             border: none;
             background: none;
         }
+
+        svg{
+            width: 30px;
+            height: 30px;
+            color: #fff
+        }
     }
 `
