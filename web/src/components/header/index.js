@@ -13,7 +13,7 @@ function Header(){
                 <small className="divider"/>
                 <a href="/sell">Vender veículos</a>
                 <small className="divider"/>
-                <a href="#">QRCode</a>
+                <Link to="/qrcode">QRCode</Link>
             </S.Nav>
         </S.Container>
     )
