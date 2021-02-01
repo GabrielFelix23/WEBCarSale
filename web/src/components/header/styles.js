@@ -22,9 +22,14 @@ export const Nav = styled.div`
     flex-direction: row;
     margin: 0 20px;
 
-    a{
+    .linkInative{
         text-decoration: none;
         color: #fff;
+        font-size: 18px;
+    }
+    .linkActived{
+        text-decoration: none;
+        color: #000;
         font-size: 18px;
     }
     a:hover{
