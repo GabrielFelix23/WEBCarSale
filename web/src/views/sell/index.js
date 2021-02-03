@@ -144,6 +144,21 @@ function Sell({match}){
         })
     }
 
+    async function clear() {
+        setBrand('')
+        setPrice('')
+        setModel('')
+        setChassis('')
+        setYear('')
+        setKm('')
+        setExchange('')
+        setDoors('')
+        setColor('')
+        setShield('')
+        setState('')
+        setCity('')
+    }
+
     useEffect(() => {
         if(!isConnected){
             setRedirectHome(true)
@@ -195,7 +210,16 @@ function Sell({match}){
                     <label>Cidade</label>
                     <input type="text" required value={city} onChange={(e) => setCity(e.target.value)}/>
 
-                    <button type="button" onClick={saveSell}>Pronto</button>
+                    <S.ContainerButton>
+                        <button type="button" onClick={saveSell}>Pronto</button>
+
+                        {
+                            brand && price && model && chassis && year &&
+                            km && exchange && doors && color && shield &&
+                            state && city && 
+                            <button onClick={clear} className="buttonClear">Limpar tudo</button>
+                        }
+                    </S.ContainerButton>
                 </S.ContainerInput>
         </S.Container>
     )

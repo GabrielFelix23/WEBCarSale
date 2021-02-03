@@ -27,18 +27,41 @@ export const ContainerInput = styled.div`
         font-size: 17px;
         color: #6E6E6E
     }
+`
+
+export const ContainerButton = styled.div`
+    display: flex;
+    flex-direction: row;
+
     button{
         background: #F53131;
         border: none;
+        width: 100%;
         height: 40px;
         color: #fff;
         border-radius: 5px;
         font-size: 17px;
         font-weight: bold;
         cursor: pointer;
-        margin: 10px 0
+        margin: 10px 0;
     }
     button:hover{
+        opacity: 0.7
+    }
+
+    .buttonClear{
+        border: 1px solid #F53131;
+        background: #fff;
+        width: 100%;
+        height: 40px;
+        color: #F53131;
+        border-radius: 5px;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 10px 0 10px 10px
+    }
+    .buttonClear:hover{
         opacity: 0.7
     }
 `
