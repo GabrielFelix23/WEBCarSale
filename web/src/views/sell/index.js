@@ -217,7 +217,7 @@ function Sell({match}){
                             brand && price && model && chassis && year &&
                             km && exchange && doors && color && shield &&
                             state && city && 
-                            <button onClick={clear} className="buttonClear">Limpar tudo</button>
+                            <button type="button" onClick={clear} className="buttonClear">Limpar tudo</button>
                         }
                     </S.ContainerButton>
                 </S.ContainerInput>
