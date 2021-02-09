@@ -17,10 +17,10 @@ function QRCode(){
         <S.Container>
             {redirect && <Redirect to="/"/>}
             
-            <h1>Aproxime a câmera do seu celular:</h1>
+            <h1>Aproxime a câmera do seu celular!</h1>
             <Qr value="getMacaddress" size={250}/>
             <S.ContainerInput>
-                <h2>Entre com o número que apareceu no seu celular!</h2>
+                <h2>Entre com o número fornecido pelo QRCode:</h2>
                 <input type="text" value={mac} onChange={(e) => setMac(e.target.value)}/>
                 <button type="button" onClick={macAddress}>Pronto</button>
             </S.ContainerInput>  
