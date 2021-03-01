@@ -21,6 +21,7 @@ function Car({match}) {
       await api.delete(`/delete/${match.params.id}`)
       .then(() => {
         setRedirect(true)
+        window.location.reload()
       })
     }
   }
