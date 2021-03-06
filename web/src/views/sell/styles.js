@@ -27,6 +27,15 @@ export const ContainerInput = styled.div`
         font-size: 17px;
         color: #6E6E6E
     }
+    .containerBack{
+        position: relative;
+        left: 90%;
+
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
 `
 
 export const ContainerButton = styled.div`

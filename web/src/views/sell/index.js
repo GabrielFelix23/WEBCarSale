@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react'
 import * as S from './styles'
 
 import api from '../../api'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import isConnected from '../../util/get_macaddress'
+
+import back from '../../used/back.png'
 
 function Sell({match}){
     const [error, setError] = useState()
@@ -122,6 +124,8 @@ function Sell({match}){
             })
             .then(() => {
                 setRedirectHome(true)
+                window.location.reload()
+
             })
         }
     }
@@ -174,6 +178,11 @@ function Sell({match}){
                 {redirect  && <Redirect to={`/filter/${match.params.id}`}/>}
                 {redirectHome && <Redirect to={'/'}/>}
                 <S.ContainerInput>
+                    {match.params.id && 
+                        <Link to={`/filter/${match.params.id}`} className="containerBack">
+                            <img src={back} alt="back"/>
+                        </Link>
+                    }
                     <label>Marca</label>
                     <input type="text" required value={brand} onChange={(e) => setBrand(e.target.value)}/>
 
