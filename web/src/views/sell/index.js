@@ -189,7 +189,7 @@ function Sell({match}){
                     <label>modelo</label>
                     <input type="text" required value={model} onChange={(e) => setModel(e.target.value)}/>
 
-                    <label>Preço</label>
+                    <label>R$</label>
                     <input type="number" required value={price} onChange={(e) => setPrice(e.target.value)}/>
 
                     <label>Chassi</label>
@@ -198,7 +198,7 @@ function Sell({match}){
                     <label>Ano</label>
                     <input type="number" required value={year} onChange={(e) => setYear(e.target.value)}/>
 
-                    <label>Km/H</label>
+                    <label>Km/h</label>
                     <input type="number" required value={km} onChange={(e) => setKm(e.target.value)}/>
 
                     <label>Câmbio</label>

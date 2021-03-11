@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import * as S from './styles'
 
@@ -11,8 +11,8 @@ function TaskCar({id, name, price, km}) {
             <img src={car} alt="Car"/>
             <S.Value>
                 <small>Carro: {name}</small>
-                <small>R$ {price}</small>
-                <small>KM/H {km}</small>
+                <small>R${price}</small>
+                <small>Km/h {km}</small>
             </S.Value>
             <Link to={`/filter/${id}`}>Ver +</Link>
         </S.Box>
